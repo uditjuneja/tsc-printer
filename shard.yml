@@ -1,0 +1,10 @@
+name: tsc-printer
+version: 0.0.1
+
+authors:
+  - Tom Richards <tom@tomrichards.net>
+
+description: |
+  Library for working with TSC printers using TSPL.
+
+license: MIT
