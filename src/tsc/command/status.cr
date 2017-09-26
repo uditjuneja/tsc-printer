@@ -99,6 +99,10 @@ module Tsc
         return true if resp == '1'.ord
         false
       end
+
+      def cancel
+        @socket << CANCEL
+      end
     end
   end
 end

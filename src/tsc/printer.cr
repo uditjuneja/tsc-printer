@@ -44,6 +44,17 @@ module Tsc
       raise ConnectionError.new(e.message)
     end
 
+    def connect(&block)
+      @socket = TCPSocket.new(@host, @port)
+      @connected = true
+      yield self
+    rescue e : Errno
+      raise ConnectionError.new(e.message)
+    ensure
+      @connected = false
+      @socket.close
+    end
+
     # Tears down the existing TCP connection to the printer.
     def disconnect
       @socket.close

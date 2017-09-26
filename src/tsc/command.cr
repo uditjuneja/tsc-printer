@@ -4,6 +4,4 @@ module Tsc
   end
 end
 
-require "./command/label"
-require "./command/setup"
-require "./command/status"
+require "./command/*"
