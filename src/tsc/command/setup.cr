@@ -34,15 +34,17 @@ module Tsc
 
       def cls
         @socket << CLS
+        @socket << EOL
       end
 
       def direction(x : Int32, y : Int32)
-        @socket << "#{DIRECTION} #{x},#{y}"
+        @socket << "#{DIRECTION} #{x},#{y}#{EOL}"
       end
 
       def print(sets : Int32, copies : Int32 = 0)
         @socket << "#{PRINT} #{sets}"
         @socket << ",#{copies}" if copies > 0
+        @socket << EOL
       end
 
       # This command defines the label width and length.
@@ -55,6 +57,7 @@ module Tsc
         when Tsc::Unit::Dot
           @socket << "#{width} dot,#{length} dot"
         end
+        @socket << EOL
       end
     end
   end

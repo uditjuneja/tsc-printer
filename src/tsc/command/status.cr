@@ -81,7 +81,7 @@ module Tsc
         @socket << RESET
       end
 
-      # This command inquires the mileage of the printer. Only the integer part
+      # This command retrieves the mileage of the printer. Only the integer part
       # of the mileage value is returned.
       def mileage
         @socket << MILEAGE
@@ -91,7 +91,7 @@ module Tsc
         resp
       end
 
-      # This command inquires the presence of the Real Time Clock installed in the printer.
+      # This command determines whether a Real Time Clock is installed in the printer.
       def has_rtc? : Bool
         @socket << RTC
         resp = @socket.read_byte

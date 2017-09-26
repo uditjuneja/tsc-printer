@@ -37,6 +37,7 @@ module Tsc
         @socket << " "
         @socket << "#{x},#{y},#{x_end},#{y_end},#{thickness}"
         @socket << ",#{radius}" if radius > 0
+        @socket << EOL
       end
 
       # This command prints 1D barcodes.
@@ -51,6 +52,7 @@ module Tsc
         @socket << '"'
         @socket << content
         @socket << '"'
+        @socket << EOL
       end
 
       # This command prints text on the label.
@@ -65,6 +67,7 @@ module Tsc
         @socket << '"'
         @socket << content
         @socket << '"'
+        @socket << EOL
       end
     end
   end

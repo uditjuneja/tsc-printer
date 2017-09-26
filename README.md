@@ -1,6 +1,6 @@
 # tsc-printer
 
-Library for working with TSC printers over the network via TSPL.
+Library for using TSC printers over the network via TSPL.
 
 ## Requirements
 
