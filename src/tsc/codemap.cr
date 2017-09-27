@@ -57,5 +57,14 @@ module Tsc
       0x48 => :ribbon_jam,
       0x60 => :print_head_open,
     }
+
+    def self.convert_detailed_status_response(slice : Bytes)
+      {
+        message:       MESSAGES[slice[1]],
+        warning:       WARNINGS[slice[2]],
+        printer_error: PRINTER_ERRORS[slice[3]],
+        media_error:   MEDIA_ERRORS[slice[4]],
+      }
+    end
   end
 end

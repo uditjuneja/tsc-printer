@@ -68,12 +68,7 @@ module Tsc
         @socket << STATUS_DETAILED
         @socket.read(slice)
 
-        return {
-          message:       Codemap::MESSAGES[slice[1]],
-          warning:       Codemap::WARNINGS[slice[2]],
-          printer_error: Codemap::PRINTER_ERRORS[slice[3]],
-          media_error:   Codemap::MEDIA_ERRORS[slice[4]],
-        }
+        Codemap.convert_detailed_status_response(slice)
       end
 
       # This command resets the printer.

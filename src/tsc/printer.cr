@@ -11,7 +11,6 @@ module Tsc
     property host : String
     property port : Int32 = 9100
     property socket : TCPSocket
-    @connected : Bool
 
     # Creates a new, not-yet-connected printer instance.
     #
@@ -26,39 +25,30 @@ module Tsc
     # p = Printer.new("192.168.1.123", 1234)
     # ```
     def initialize(@host, @port = 9100)
-      @socket = uninitialized TCPSocket
-      @connected = false
-    end
-
-    # Returns `true` if the printer is connected.
-    def connected?
-      @connected
+      @socket = TCPSocket.new
     end
 
     # Establishes a TCP connection to the printer.
     def connect
-      @socket = TCPSocket.new(@host, @port)
-      @connected = true
+      @socket.connect(@host, @port)
     rescue e : Errno
-      @connected = false
       raise ConnectionError.new(e.message)
+    ensure
+      @socket.close
     end
 
     def connect(&block)
-      @socket = TCPSocket.new(@host, @port)
-      @connected = true
+      @socket.connect(@host, @port)
       yield self
     rescue e : Errno
       raise ConnectionError.new(e.message)
     ensure
-      @connected = false
       @socket.close
     end
 
     # Tears down the existing TCP connection to the printer.
     def disconnect
       @socket.close
-      @connected = false
     end
   end
 end
