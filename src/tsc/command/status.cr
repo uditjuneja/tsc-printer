@@ -72,7 +72,7 @@ module Tsc
       # ```
       # printer.status_detailed # => { message: :waiting_to_press_print_key, warning: :receive_buffer_full, printer_error: :print_head_error, media_error: :paper_empty }
       # ```
-      def status_detailed : Hash(Symbol, Symbol)
+      def status_detailed
         slice = Bytes.new(8)
         @socket << STATUS_DETAILED
         @socket.read(slice)
@@ -106,6 +106,11 @@ module Tsc
 
       def cancel
         @socket << CANCEL
+      end
+
+      def model
+        @socket << MODEL
+        @socket.gets_to_end
       end
     end
   end

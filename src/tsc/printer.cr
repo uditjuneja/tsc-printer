@@ -3,6 +3,17 @@ require "./command"
 require "./error"
 
 module Tsc
+  # A `Tsc::Printer` allows for communicating with a TSC printer over the network.
+  #
+  # ```
+  # printer = Tsc::Printer.new("1.2.3.4")
+  # printer.connect do |p|
+  #   p.cls
+  #   p.direction(0, 0)
+  #   p.text(121, 32, "0", 0, 30, 30, 0, "TEST")
+  #   p.print(1)
+  # end
+  # ```
   class Printer
     include Command::Label
     include Command::Setup
@@ -10,7 +21,7 @@ module Tsc
 
     property host : String
     property port : Int32 = 9100
-    property socket : TCPSocket
+    property socket : TCPSocket | IO::Memory
 
     # Creates a new, not-yet-connected printer instance.
     #
