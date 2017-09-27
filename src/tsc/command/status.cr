@@ -31,7 +31,7 @@ module Tsc
       # printer.status # => :normal
       # printer.status # => :ribbon_empty_head_open
       # ```
-      def status
+      def status : Symbol
         @socket << STATUS
         resp = @socket.read_byte
         Codemap::DETAILS[resp]
@@ -39,8 +39,10 @@ module Tsc
 
       # This command restarts the printer and does not run AUTO.BAS.
       #
-      # **Notes:**
+      # **Note:**
       # - When the printer receives this command, the printer will restart itself whether AUTO.BAS exists or not.
+      #
+      # **Since:**
       # - This command has been supported since V5.23 EZ and later firmware.
       def restart
         @socket << RESTART
@@ -51,19 +53,26 @@ module Tsc
         @socket << DISABLE_IMMEDIATE
       end
 
-      # This command is used to cancel the PAUSE status of printer.
+      # This command is used to cancel the pause status of printer.
       def unpause
         @socket << UNPAUSE
       end
 
-      # This command is used to PAUSE the printer.
+      # This command is used to pause the printer.
       def pause
         @socket << PAUSE
       end
 
-      # This command obtains the printer status at any time, even in the event
-      # of printer error.
-      def status_detailed
+      # This command obtains detailed status information of the printer, even
+      # in the event of printer error.
+      #
+      # **Since:**
+      # - This command has been supported since V6.29 EZ and later firmware.
+      #
+      # ```
+      # printer.status_detailed # => { message: :waiting_to_press_print_key, warning: :receive_buffer_full, printer_error: :print_head_error, media_error: :paper_empty }
+      # ```
+      def status_detailed : Hash(Symbol, Symbol)
         slice = Bytes.new(8)
         @socket << STATUS_DETAILED
         @socket.read(slice)

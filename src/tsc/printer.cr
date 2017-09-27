@@ -16,19 +16,24 @@ module Tsc
     #
     # ```
     # # A network printer located at hostname.example.com
-    # p = Printer.new("hostname.example.com")
+    # printer = Printer.new("hostname.example.com")
     #
     # # A network printer by IP address
-    # p = Printer.new("192.168.1.123")
+    # printer = Printer.new("1.2.3.4")
     #
     # # A network printer by IP address with custom port
-    # p = Printer.new("192.168.1.123", 1234)
+    # printer = Printer.new("1.2.3.4", 56789)
     # ```
     def initialize(@host, @port = 9100)
       @socket = TCPSocket.new
     end
 
-    # Establishes a TCP connection to the printer.
+    # Establishes a connection to the printer.
+    #
+    # ```
+    # printer = Printer.new("1.2.3.4")
+    # printer.connect
+    # ```
     def connect
       @socket.connect(@host, @port)
     rescue e : Errno
@@ -37,6 +42,16 @@ module Tsc
       @socket.close
     end
 
+    # Establishes a connection to the printer, and yields the printer instance
+    # to the block. The connection will be closed automatically when the block
+    # returns.
+    #
+    # ```
+    # printer = Printer.new("1.2.3.4")
+    # printer.connect do |p|
+    #   ...
+    # end
+    # ```
     def connect(&block)
       @socket.connect(@host, @port)
       yield self
@@ -46,7 +61,14 @@ module Tsc
       @socket.close
     end
 
-    # Tears down the existing TCP connection to the printer.
+    # Closes an established connection to a printer.
+    #
+    # ```
+    # printer = Printer.new("1.2.3.4")
+    # printer.connect
+    # ...
+    # printer.disconnect
+    # ```
     def disconnect
       @socket.close
     end
