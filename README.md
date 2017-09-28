@@ -18,11 +18,12 @@ dependencies:
 
 ## Basic usage
 
-See the examples/ directory.
+See the [examples/][examples] directory.
 
-## Building docs
+## API documentation
 
-```bash
-$ crystal doc
-$ cp -R images doc/
-```
+https://t-richards.github.io/tsc-printer/
+
+
+
+[examples]: https://github.com/t-richards/tsc-printer/tree/master/examples

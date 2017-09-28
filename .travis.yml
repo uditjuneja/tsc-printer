@@ -1,0 +1,11 @@
+language: crystal
+script:
+  - crystal tool format --check
+  - crystal spec
+  - crystal docs
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master

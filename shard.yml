@@ -7,4 +7,6 @@ authors:
 description: |
   Library for working with TSC printers using TSPL.
 
+crystal: 0.23.1
+
 license: MIT
