@@ -8,7 +8,7 @@ module Tsc
       DISABLE_IMMEDIATE      = "\e!D"
       UNPAUSE                = "\e!O"
       PAUSE                  = "\e!P"
-      RESTART_AUTO_BAS       = "\e!Q"
+      RESTART_ONLY_AUTO      = "\e!Q"
       RESET                  = "\e!R"
       STATUS_DETAILED        = "\e!S"
       FEED                   = "\e!F"
@@ -48,6 +48,22 @@ module Tsc
         @socket << RESTART
       end
 
+      # This command restarts the printer only if AUTO.BAS exists.
+      #
+      # **Note:**
+      # - If there is no AUTO.BAS inside the printer, the printer will not restart itself.
+      #
+      # **Since:**
+      # - This command has been supported since V6.72 EZ and later firmware.
+      def restart_only_auto
+        @socket << RESTART_AUTO_BAS
+      end
+
+      # This command resets the printer.
+      def reset
+        @socket << RESET
+      end
+
       # This command is used to disable immediate commands.
       def disable_immediate
         @socket << DISABLE_IMMEDIATE
@@ -78,11 +94,6 @@ module Tsc
         @socket.read(slice)
 
         Codemap.convert_detailed_status_response(slice)
-      end
-
-      # This command resets the printer.
-      def reset
-        @socket << RESET
       end
 
       # This command retrieves the mileage of the printer. Only the integer part
@@ -118,7 +129,7 @@ module Tsc
       # printer.model # => ""
       # ```
       def model : String
-        slice = Bytes.new(8)
+        slice = Bytes.new(16)
         @socket << MODEL
         len = @socket.read(slice)
 

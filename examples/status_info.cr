@@ -3,9 +3,8 @@ require "../src/tsc/printer"
 printer = Tsc::Printer.new("192.168.1.160")
 printer.connect do |p|
   pp p.model
-  exit
   pp p.status
+  pp p.has_rtc?
   pp p.mileage
   pp p.status_detailed
-  pp p.has_rtc?
 end
