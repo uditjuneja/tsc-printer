@@ -177,6 +177,28 @@ module Tsc
         @socket << UNPAUSE
       end
 
+      # Enters the printer into *dump mode*. In *dump mode*, the printer outputs
+      # code directly without interpretation.
+      #
+      # ```
+      # printer.dump
+      # ```
+      def dump
+        @socket << DUMP
+      end
+
+      # Enables immediate commands.
+      #
+      # **Since:**
+      # - This command has been supported since V6.61 EZ and later firmware.
+      #
+      # ```
+      # printer.enable_immediate
+      # ```
+      def enable_immediate
+        @socket << ENABLE_IMMEDIATE
+      end
+
       # Retrieves the free memory of the printer.
       #
       # ```
