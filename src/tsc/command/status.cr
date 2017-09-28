@@ -25,7 +25,7 @@ module Tsc
       FILES                  = "\e~!F"
       LINE_MODE_DISABLE      = "\eZ"
       LINE_MODE_ENABLE       = "\eY"
-      MEMORY                 = "\e~!A"
+      FREE_MEMORY            = "\e~!A"
       MILEAGE                = "\e~!@"
       MODEL                  = "\e~!T"
       RTC                    = "\e~!C"
@@ -163,19 +163,6 @@ module Tsc
         Codemap.convert_detailed_status_response(slice)
       end
 
-      # Retrieves the mileage of the printer.
-      #
-      # This is an immediate command.
-      #
-      # ```
-      # printer.mileage # => 89
-      # ```
-      def mileage : Int32
-        @socket << MILEAGE
-        resp = @socket.gets('\r', true)
-        resp.not_nil!.to_i
-      end
-
       # Cancels the pause status of printer.
       #
       # This is an immediate command.
@@ -190,17 +177,32 @@ module Tsc
         @socket << UNPAUSE
       end
 
-      # Determines whether a Real Time Clock is installed in the printer.
+      # Retrieves the free memory of the printer.
       #
       # ```
-      # printer.has_rtc? # => true
+      # printer.free_memory # => {dram: 256, flash: 2560}
       # ```
-      def has_rtc? : Bool
-        @socket << RTC
-        resp = @socket.read_byte
+      def free_memory
+        slice = Bytes.new(16)
+        @socket << FREE_MEMORY
+        dram = @socket.gets('\r', true).not_nil!.split(':')[1].to_i
+        flash = @socket.gets('\r', true).not_nil!.split(':')[1].to_i
 
-        return true if resp == '1'.ord
-        false
+        return {
+          dram:  dram,
+          flash: flash,
+        }
+      end
+
+      # Retrieves the mileage of the printer.
+      #
+      # ```
+      # printer.mileage # => 89
+      # ```
+      def mileage : Int32
+        @socket << MILEAGE
+        resp = @socket.gets('\r', true)
+        resp.not_nil!.to_i
       end
 
       # Retrieves the model name and number of the printer.
@@ -214,6 +216,19 @@ module Tsc
         len = @socket.read(slice)
 
         String.new(slice[0, len])
+      end
+
+      # Determines whether a Real Time Clock is installed in the printer.
+      #
+      # ```
+      # printer.has_rtc? # => true
+      # ```
+      def has_rtc? : Bool
+        @socket << RTC
+        resp = @socket.read_byte
+
+        return true if resp == '1'.ord
+        false
       end
     end
   end
