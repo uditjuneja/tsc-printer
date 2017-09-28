@@ -108,18 +108,21 @@ module Tsc
       #
       # **Since:**
       # - This command has been supported since V7.00 EZ and later firmware.
-      def cancel : Nil
+      def cancel
         @socket << CANCEL
       end
 
-      # This command retrieves the model name and number of the printer
+      # This command retrieves the model name and number of the printer.
       #
       # ```
       # printer.model # => ""
       # ```
       def model : String
+        slice = Bytes.new(8)
         @socket << MODEL
-        @socket.gets_to_end
+        len = @socket.read(slice)
+
+        String.new(slice[0, len])
       end
     end
   end
