@@ -38,10 +38,28 @@ module Tsc
         @socket << EOL
       end
 
-      def direction(x : Int32, y : Int32)
-        @socket << "#{DIRECTION} #{x},#{y}#{EOL}"
+      # Defines the printout direction and mirror image. This will be stored in
+      # the printer memory.
+      #
+      # Acceptable values for *n* and *m* are 0 or 1. Please refer to the following diagram:
+      # ![Direction diagram](/images/setup/direction.png)
+      #
+      # ```
+      # printer.direction(0, 0) # Top-first, no mirroring
+      # printer.direction(1, 0) # Bottom-first, no mirroring
+      # printer.direction(0, 1) # Top-first with mirroring
+      # printer.direction(1, 1) # Bottom-first with mirroring
+      # ```
+      def direction(n : Int32, m : Int32)
+        @socket << "#{DIRECTION} #{n},#{m}#{EOL}"
       end
 
+      # Prints the label format currently stored in the image buffer.
+      #
+      # ```
+      # # Three sets of two labels, grand total of six labels
+      # printer.print(3, 2)
+      # ```
       def print(sets : Int32, copies : Int32 = 0)
         @socket << "#{PRINT} #{sets}"
         @socket << ",#{copies}" if copies > 0

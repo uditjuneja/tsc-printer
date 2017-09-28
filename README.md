@@ -19,3 +19,10 @@ dependencies:
 ## Basic usage
 
 See the examples/ directory.
+
+## Building docs
+
+```bash
+$ crystal doc
+$ cp -R images doc/
+```
