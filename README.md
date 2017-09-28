@@ -1,12 +1,10 @@
 # tsc-printer
 
+[![Build Status](https://travis-ci.org/t-richards/tsc-printer.svg?branch=master)](https://travis-ci.org/t-richards/tsc-printer)
+
 Library for using TSC printers over the network via TSPL.
 
-## Requirements
-
- - Crystal `>= 0.23.1`
-
-## Installing
+## Installation
 
 Add this to your application's `shard.yml`:
 
@@ -16,14 +14,10 @@ dependencies:
     github: t-richards/tsc-printer
 ```
 
-## Basic usage
+## Documentation
 
-See the [examples/][examples] directory.
+ - [Latest API](https://t-richards.github.io/tsc-printer/)
 
-## API documentation
+## Usage
 
-https://t-richards.github.io/tsc-printer/
-
-
-
-[examples]: https://github.com/t-richards/tsc-printer/tree/master/examples
+See the [examples/](https://github.com/t-richards/tsc-printer/tree/master/examples) directory.
