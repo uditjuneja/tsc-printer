@@ -104,11 +104,20 @@ module Tsc
         false
       end
 
-      def cancel
+      # This command can cancel all printing files.
+      #
+      # **Since:**
+      # - This command has been supported since V7.00 EZ and later firmware.
+      def cancel : Nil
         @socket << CANCEL
       end
 
-      def model
+      # This command retrieves the model name and number of the printer
+      #
+      # ```
+      # printer.model # => ""
+      # ```
+      def model : String
         @socket << MODEL
         @socket.gets_to_end
       end

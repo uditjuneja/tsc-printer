@@ -11,7 +11,7 @@ module Tsc
         media_error:   :paper_empty,
       }
       actual = Codemap.convert_detailed_status_response(bytes)
-      expected.should eq actual
+      actual.should eq expected
     end
   end
 end

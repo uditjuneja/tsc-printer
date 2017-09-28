@@ -21,7 +21,7 @@ module Tsc
 
     property host : String
     property port : Int32 = 9100
-    property socket : TCPSocket | IO::Memory
+    property socket : TCPSocket
 
     # Creates a new, not-yet-connected printer instance.
     #

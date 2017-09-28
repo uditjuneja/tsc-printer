@@ -49,8 +49,7 @@ module Tsc
 
       # This command defines the label width and length.
       def size(width : Int32, length : Int32, unit : Tsc::Unit = Tsc::Unit::Inch)
-        @socket << SIZE
-        @socket << " "
+        @socket << "#{SIZE} "
         case unit
         when Tsc::Unit::Inch
           @socket << "#{width},#{length}"
