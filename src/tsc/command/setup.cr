@@ -42,7 +42,7 @@ module Tsc
       # the printer memory.
       #
       # Acceptable values for *n* and *m* are 0 or 1. Please refer to the following diagram:
-      # ![Direction diagram](/images/setup/direction.png)
+      # ![Direction diagram](/tsc-printer/images/setup/direction.png)
       #
       # ```
       # printer.direction(0, 0) # Top-first, no mirroring
