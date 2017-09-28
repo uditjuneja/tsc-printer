@@ -3,6 +3,8 @@ script:
   - crystal tool format --check
   - crystal spec
   - crystal docs
+before_deploy:
+  - cp -R images doc/
 deploy:
   provider: pages
   skip_cleanup: true
