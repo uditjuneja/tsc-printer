@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/t-richards/tsc-printer">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Tsc::Command::Status - github.com/t-richards/tsc-printer</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc" data-name="tsc">
+      <a href="../../Tsc.html">Tsc</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Codemap" data-name="tsc::codemap">
+      <a href="../../Tsc/Codemap.html">Codemap</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc/Command" data-name="tsc::command">
+      <a href="../../Tsc/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Label" data-name="tsc::command::label">
+      <a href="../../Tsc/Command/Label.html">Label</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Setup" data-name="tsc::command::setup">
+      <a href="../../Tsc/Command/Setup.html">Setup</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/t-richards/tsc-printer/Tsc/Command/Status" data-name="tsc::command::status">
+      <a href="../../Tsc/Command/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/ConnectionError" data-name="tsc::connectionerror">
+      <a href="../../Tsc/ConnectionError.html">ConnectionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Error" data-name="tsc::error">
+      <a href="../../Tsc/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Printer" data-name="tsc::printer">
+      <a href="../../Tsc/Printer.html">Printer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Unit" data-name="tsc::unit">
+      <a href="../../Tsc/Unit.html">Unit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Tsc::Command::Status
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>This module implements <strong>Status Polling and Immediate Commands</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Tsc/Printer.html">Tsc::Printer</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L6" target="_blank">tsc/command/status.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="CANCEL">
+        <strong>CANCEL</strong> = <code><span class="s">&quot;\e&#33;.&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CODE_PAGE_COUNTRY_CODE">
+        <strong>CODE_PAGE_COUNTRY_CODE</strong> = <code><span class="s">&quot;\e~&#33;I&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DISABLE_IMMEDIATE">
+        <strong>DISABLE_IMMEDIATE</strong> = <code><span class="s">&quot;\e&#33;D&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DUMP">
+        <strong>DUMP</strong> = <code><span class="s">&quot;\e~&#33;D&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ENABLE_IMMEDIATE">
+        <strong>ENABLE_IMMEDIATE</strong> = <code><span class="s">&quot;\e~&#33;E&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FEED">
+        <strong>FEED</strong> = <code><span class="s">&quot;\e&#33;F&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FILES">
+        <strong>FILES</strong> = <code><span class="s">&quot;\e~&#33;F&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FREE_MEMORY">
+        <strong>FREE_MEMORY</strong> = <code><span class="s">&quot;\e~&#33;A&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LINE_MODE_DISABLE">
+        <strong>LINE_MODE_DISABLE</strong> = <code><span class="s">&quot;\eZ&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LINE_MODE_ENABLE">
+        <strong>LINE_MODE_ENABLE</strong> = <code><span class="s">&quot;\eY&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MILEAGE">
+        <strong>MILEAGE</strong> = <code><span class="s">&quot;\e~&#33;&#64;&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MODEL">
+        <strong>MODEL</strong> = <code><span class="s">&quot;\e~&#33;T&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PAUSE">
+        <strong>PAUSE</strong> = <code><span class="s">&quot;\e&#33;P&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RESET">
+        <strong>RESET</strong> = <code><span class="s">&quot;\e&#33;R&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RESTART">
+        <strong>RESTART</strong> = <code><span class="s">&quot;\e&#33;C&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RESTART_ONLY_AUTO">
+        <strong>RESTART_ONLY_AUTO</strong> = <code><span class="s">&quot;\e&#33;Q&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RTC">
+        <strong>RTC</strong> = <code><span class="s">&quot;\e~&#33;C&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="STATUS">
+        <strong>STATUS</strong> = <code><span class="s">&quot;\e&#33;?&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="STATUS_DETAILED">
+        <strong>STATUS_DETAILED</strong> = <code><span class="s">&quot;\e&#33;S&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="UNPAUSE">
+        <strong>UNPAUSE</strong> = <code><span class="s">&quot;\e&#33;O&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cancel-instance-method" class="signature"><strong>#cancel</strong></a>
+        
+          <div class="summary"><p>Cancels all printing files.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disable_immediate-instance-method" class="signature"><strong>#disable_immediate</strong></a>
+        
+          <div class="summary"><p>Disables all immediate commands.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dump-instance-method" class="signature"><strong>#dump</strong></a>
+        
+          <div class="summary"><p>Enters the printer into <em>dump mode</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enable_immediate-instance-method" class="signature"><strong>#enable_immediate</strong></a>
+        
+          <div class="summary"><p>Enables immediate commands.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#feed-instance-method" class="signature"><strong>#feed</strong></a>
+        
+          <div class="summary"><p>Feeds a label.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#free_memory-instance-method" class="signature"><strong>#free_memory</strong></a>
+        
+          <div class="summary"><p>Retrieves the free memory of the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_rtc%3F%3ABool-instance-method" class="signature"><strong>#has_rtc?</strong> : Bool</a>
+        
+          <div class="summary"><p>Determines whether a Real Time Clock is installed in the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mileage%3AInt32-instance-method" class="signature"><strong>#mileage</strong> : Int32</a>
+        
+          <div class="summary"><p>Retrieves the mileage of the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#model%3AString-instance-method" class="signature"><strong>#model</strong> : String</a>
+        
+          <div class="summary"><p>Retrieves the model name and number of the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pause-instance-method" class="signature"><strong>#pause</strong></a>
+        
+          <div class="summary"><p>Pauses the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset-instance-method" class="signature"><strong>#reset</strong></a>
+        
+          <div class="summary"><p>Resets the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart-instance-method" class="signature"><strong>#restart</strong></a>
+        
+          <div class="summary"><p>Restarts the printer and does not run AUTO.BAS.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restart_only_auto-instance-method" class="signature"><strong>#restart_only_auto</strong></a>
+        
+          <div class="summary"><p>Restarts the printer only if AUTO.BAS exists.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status%3ASymbol-instance-method" class="signature"><strong>#status</strong> : Symbol</a>
+        
+          <div class="summary"><p>Obtains the printer status at any time, even in the event of printer error.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status_detailed-instance-method" class="signature"><strong>#status_detailed</strong></a>
+        
+          <div class="summary"><p>Obtains detailed status information of the printer, even in the event of printer error.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unpause-instance-method" class="signature"><strong>#unpause</strong></a>
+        
+          <div class="summary"><p>Cancels the pause status of printer.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="cancel-instance-method">
+      <div class="signature">
+        
+        def <strong>cancel</strong>
+
+        <a class="method-permalink" href="#cancel-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Cancels all printing files.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V7.00 EZ and later firmware.</li></ul>
+
+<pre><code>printer.cancel</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disable_immediate-instance-method">
+      <div class="signature">
+        
+        def <strong>disable_immediate</strong>
+
+        <a class="method-permalink" href="#disable_immediate-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Disables all immediate commands.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V6.61 EZ and later firmware.</li></ul>
+
+<pre><code>printer.disable_immediate</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dump-instance-method">
+      <div class="signature">
+        
+        def <strong>dump</strong>
+
+        <a class="method-permalink" href="#dump-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Enters the printer into <em>dump mode</em>. In <em>dump mode</em>, the printer outputs
+code directly without interpretation.</p>
+
+<pre><code>printer.dump</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L186" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enable_immediate-instance-method">
+      <div class="signature">
+        
+        def <strong>enable_immediate</strong>
+
+        <a class="method-permalink" href="#enable_immediate-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Enables immediate commands.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V6.61 EZ and later firmware.</li></ul>
+
+<pre><code>printer.enable_immediate</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L198" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="feed-instance-method">
+      <div class="signature">
+        
+        def <strong>feed</strong>
+
+        <a class="method-permalink" href="#feed-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Feeds a label. This function is the same as pressing the FEED button.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V7.00 EZ and later firmware.</li></ul>
+
+<pre><code>printer.feed</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="free_memory-instance-method">
+      <div class="signature">
+        
+        def <strong>free_memory</strong>
+
+        <a class="method-permalink" href="#free_memory-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Retrieves the free memory of the printer.</p>
+
+<pre><code>printer.free_memory <span class="c"># &#61;&gt; &#123;dram: 256, flash: 2560&#125;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L207" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_rtc?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>has_rtc?</strong> : Bool
+
+        <a class="method-permalink" href="#has_rtc%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Determines whether a Real Time Clock is installed in the printer.</p>
+
+<pre><code>printer.has_rtc? <span class="c"># &#61;&gt; true</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L248" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mileage:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>mileage</strong> : Int32
+
+        <a class="method-permalink" href="#mileage%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Retrieves the mileage of the printer.</p>
+
+<pre><code>printer.mileage <span class="c"># &#61;&gt; 89</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L224" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="model:String-instance-method">
+      <div class="signature">
+        
+        def <strong>model</strong> : String
+
+        <a class="method-permalink" href="#model%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Retrieves the model name and number of the printer.</p>
+
+<pre><code>printer.model <span class="c"># &#61;&gt; &quot;TTP245C&quot;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L235" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pause-instance-method">
+      <div class="signature">
+        
+        def <strong>pause</strong>
+
+        <a class="method-permalink" href="#pause-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Pauses the printer.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V6.93 EZ and later firmware.</li></ul>
+
+<pre><code>printer.pause</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset-instance-method">
+      <div class="signature">
+        
+        def <strong>reset</strong>
+
+        <a class="method-permalink" href="#reset-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Resets the printer. Files downloaded in memory will be deleted. This command cannot be sent in dump mode.</p>
+
+<p>This is an immediate command.</p>
+
+<pre><code>printer.reset</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart-instance-method">
+      <div class="signature">
+        
+        def <strong>restart</strong>
+
+        <a class="method-permalink" href="#restart-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Restarts the printer and does not run AUTO.BAS.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Note:</strong></p>
+
+<ul><li>When the printer receives this command, the printer will restart itself whether AUTO.BAS exists or not.</li></ul>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V5.23 EZ and later firmware.</li></ul>
+
+<pre><code>printer.restart</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restart_only_auto-instance-method">
+      <div class="signature">
+        
+        def <strong>restart_only_auto</strong>
+
+        <a class="method-permalink" href="#restart_only_auto-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Restarts the printer only if AUTO.BAS exists.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Note:</strong></p>
+
+<ul><li>If there is no AUTO.BAS file loaded on the printer, the printer will not restart itself.</li></ul>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V6.72 EZ and later firmware.</li></ul>
+
+<pre><code>printer.restart_only_auto</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L130" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status:Symbol-instance-method">
+      <div class="signature">
+        
+        def <strong>status</strong> : Symbol
+
+        <a class="method-permalink" href="#status%3ASymbol-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Obtains the printer status at any time, even in the event of printer
+error.</p>
+
+<p>This is an immediate command.</p>
+
+<pre><code>printer.status <span class="c"># &#61;&gt; :normal</span>
+printer.status <span class="c"># &#61;&gt; :ribbon_empty_head_open</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status_detailed-instance-method">
+      <div class="signature">
+        
+        def <strong>status_detailed</strong>
+
+        <a class="method-permalink" href="#status_detailed-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Obtains detailed status information of the printer, even in the event of
+printer error.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V6.29 EZ and later firmware.</li></ul>
+
+<pre><code>printer.status_detailed <span class="c"># &#61;&gt; &#123; message: :waiting_to_press_print_key, warning: :receive_buffer_full, printer_error: :print_head_error, media_error: :paper_empty &#125;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L158" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unpause-instance-method">
+      <div class="signature">
+        
+        def <strong>unpause</strong>
+
+        <a class="method-permalink" href="#unpause-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Cancels the pause status of printer.</p>
+
+<p>This is an immediate command.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>This command has been supported since V6.93 EZ and later firmware.</li></ul>
+
+<pre><code>printer.unpause</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/status.cr#L176" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

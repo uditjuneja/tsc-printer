@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/t-richards/tsc-printer">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/doc.js"></script>
+  <title>Tsc::Printer - github.com/t-richards/tsc-printer</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc" data-name="tsc">
+      <a href="../Tsc.html">Tsc</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Codemap" data-name="tsc::codemap">
+      <a href="../Tsc/Codemap.html">Codemap</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/t-richards/tsc-printer/Tsc/Command" data-name="tsc::command">
+      <a href="../Tsc/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Label" data-name="tsc::command::label">
+      <a href="../Tsc/Command/Label.html">Label</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Setup" data-name="tsc::command::setup">
+      <a href="../Tsc/Command/Setup.html">Setup</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Status" data-name="tsc::command::status">
+      <a href="../Tsc/Command/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/ConnectionError" data-name="tsc::connectionerror">
+      <a href="../Tsc/ConnectionError.html">ConnectionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Error" data-name="tsc::error">
+      <a href="../Tsc/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/t-richards/tsc-printer/Tsc/Printer" data-name="tsc::printer">
+      <a href="../Tsc/Printer.html">Printer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Unit" data-name="tsc::unit">
+      <a href="../Tsc/Unit.html">Unit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Tsc::Printer
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Tsc/Printer.html">Tsc::Printer</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A <code><a href="../Tsc/Printer.html">Tsc::Printer</a></code> allows for communicating with a TSC printer over the network.</p>
+
+<pre><code>printer <span class="o">=</span> <span class="t">Tsc</span><span class="t">::</span><span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;1.2.3.4&quot;</span>)
+printer.connect <span class="k">do</span> <span class="o">|</span>p<span class="o">|</span>
+  p.cls
+  p.direction(<span class="n">0</span>, <span class="n">0</span>)
+  p.text(<span class="n">121</span>, <span class="n">32</span>, <span class="s">&quot;0&quot;</span>, <span class="n">0</span>, <span class="n">30</span>, <span class="n">30</span>, <span class="n">0</span>, <span class="s">&quot;TEST&quot;</span>)
+  p.print(<span class="n">1</span>)
+<span class="k">end</span></code></pre>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../Tsc/Command/Label.html">Tsc::Command::Label</a></li>
+  
+    <li class="other-type"><a href="../Tsc/Command/Setup.html">Tsc::Command::Setup</a></li>
+  
+    <li class="other-type"><a href="../Tsc/Command/Status.html">Tsc::Command::Status</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L17" target="_blank">tsc/printer.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28host%2Cport%3D9100%29-class-method" class="signature"><strong>.new</strong>(host, port = <span class="n">9100</span>)</a>
+        
+          <div class="summary"><p>Creates a new, not-yet-connected printer instance.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#connect-instance-method" class="signature"><strong>#connect</strong></a>
+        
+          <div class="summary"><p>Establishes a connection to the printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#connect%28%26block%29-instance-method" class="signature"><strong>#connect</strong>(&block)</a>
+        
+          <div class="summary"><p>Establishes a connection to the printer, and yields the printer instance to the block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disconnect-instance-method" class="signature"><strong>#disconnect</strong></a>
+        
+          <div class="summary"><p>Closes an established connection to a printer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#host%3AString-instance-method" class="signature"><strong>#host</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#host%3D%28host%3AString%29-instance-method" class="signature"><strong>#host=</strong>(host : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port%3AInt32-instance-method" class="signature"><strong>#port</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port%3D%28port%3AInt32%29-instance-method" class="signature"><strong>#port=</strong>(port : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#socket%3ATCPSocket-instance-method" class="signature"><strong>#socket</strong> : TCPSocket</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#socket%3D%28socket%3ATCPSocket%29-instance-method" class="signature"><strong>#socket=</strong>(socket : TCPSocket)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Tsc/Command/Status.html">Tsc::Command::Status</a></code></h3>
+  
+  
+    <a href="../Tsc/Command/Status.html#cancel-instance-method" class="tooltip">
+      <span>cancel</span>
+    cancel</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#disable_immediate-instance-method" class="tooltip">
+      <span>disable_immediate</span>
+    disable_immediate</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#dump-instance-method" class="tooltip">
+      <span>dump</span>
+    dump</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#enable_immediate-instance-method" class="tooltip">
+      <span>enable_immediate</span>
+    enable_immediate</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#feed-instance-method" class="tooltip">
+      <span>feed</span>
+    feed</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#free_memory-instance-method" class="tooltip">
+      <span>free_memory</span>
+    free_memory</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#has_rtc%3F%3ABool-instance-method" class="tooltip">
+      <span>has_rtc? : Bool</span>
+    has_rtc?</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#mileage%3AInt32-instance-method" class="tooltip">
+      <span>mileage : Int32</span>
+    mileage</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#model%3AString-instance-method" class="tooltip">
+      <span>model : String</span>
+    model</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#pause-instance-method" class="tooltip">
+      <span>pause</span>
+    pause</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#reset-instance-method" class="tooltip">
+      <span>reset</span>
+    reset</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#restart-instance-method" class="tooltip">
+      <span>restart</span>
+    restart</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#restart_only_auto-instance-method" class="tooltip">
+      <span>restart_only_auto</span>
+    restart_only_auto</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#status%3ASymbol-instance-method" class="tooltip">
+      <span>status : Symbol</span>
+    status</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#status_detailed-instance-method" class="tooltip">
+      <span>status_detailed</span>
+    status_detailed</a>, 
+    
+  
+    <a href="../Tsc/Command/Status.html#unpause-instance-method" class="tooltip">
+      <span>unpause</span>
+    unpause</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Tsc/Command/Setup.html">Tsc::Command::Setup</a></code></h3>
+  
+  
+    <a href="../Tsc/Command/Setup.html#cls-instance-method" class="tooltip">
+      <span>cls</span>
+    cls</a>, 
+    
+  
+    <a href="../Tsc/Command/Setup.html#direction%28n%3AInt32%2Cm%3AInt32%29-instance-method" class="tooltip">
+      <span>direction(n : Int32, m : Int32)</span>
+    direction</a>, 
+    
+  
+    <a href="../Tsc/Command/Setup.html#print%28sets%3AInt32%2Ccopies%3AInt32%3D0%29-instance-method" class="tooltip">
+      <span>print(sets : Int32, copies : Int32 = <span class="n">0</span>)</span>
+    print</a>, 
+    
+  
+    <a href="../Tsc/Command/Setup.html#size%28width%3ANumber%2Clength%3ANumber%2Cunit%3ATsc%3A%3AUnit%3DTsc%3A%3AUnit%3A%3AInch%29-instance-method" class="tooltip">
+      <span>size(width : Number, length : Number, unit : Tsc::Unit = <span class="t">Tsc</span><span class="t">::</span><span class="t">Unit</span><span class="t">::</span><span class="t">Inch</span>)</span>
+    size</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Tsc/Command/Label.html">Tsc::Command::Label</a></code></h3>
+  
+  
+    <a href="../Tsc/Command/Label.html#barcode%28x%3AInt32%2Cy%3AInt32%2Ccode_type%3AString%2Cheight%3AInt32%2Chuman_readable%3AInt32%2Crotation%3AInt32%2Cnarrow%3AInt32%2Cwide%3AInt32%2Calignment%3AInt32%2Ccontent%3AString%29-instance-method" class="tooltip">
+      <span>barcode(x : Int32, y : Int32, code_type : String, height : Int32, human_readable : Int32, rotation : Int32, narrow : Int32, wide : Int32, alignment : Int32, content : String)</span>
+    barcode</a>, 
+    
+  
+    <a href="../Tsc/Command/Label.html#box%28x%3AInt32%2Cy%3AInt32%2Cx_end%3AInt32%2Cy_end%3AInt32%2Cthickness%3AInt32%2Cradius%3AInt32%3D0%29-instance-method" class="tooltip">
+      <span>box(x : Int32, y : Int32, x_end : Int32, y_end : Int32, thickness : Int32, radius : Int32 = <span class="n">0</span>)</span>
+    box</a>, 
+    
+  
+    <a href="../Tsc/Command/Label.html#text%28x%3AInt32%2Cy%3AInt32%2Cfont%3AString%2Crotation%3AInt32%2Cx_multiplication%3AInt32%2Cy_multiplication%3AInt32%2Calignment%3AInt32%2Ccontent%3AString%29-instance-method" class="tooltip">
+      <span>text(x : Int32, y : Int32, font : String, rotation : Int32, x_multiplication : Int32, y_multiplication : Int32, alignment : Int32, content : String)</span>
+    text</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new&#40;host,port&#61;9100&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(host, port = <span class="n">9100</span>)
+
+        <a class="method-permalink" href="#new%28host%2Cport%3D9100%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new, not-yet-connected printer instance.</p>
+
+<pre><code><span class="c"># A network printer located at hostname.example.com</span>
+printer <span class="o">=</span> <span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;hostname.example.com&quot;</span>)
+
+<span class="c"># A network printer by IP address</span>
+printer <span class="o">=</span> <span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;1.2.3.4&quot;</span>)
+
+<span class="c"># A network printer by IP address with custom port</span>
+printer <span class="o">=</span> <span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;1.2.3.4&quot;</span>, <span class="n">56789</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="connect-instance-method">
+      <div class="signature">
+        
+        def <strong>connect</strong>
+
+        <a class="method-permalink" href="#connect-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Establishes a connection to the printer.</p>
+
+<pre><code>printer <span class="o">=</span> <span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;1.2.3.4&quot;</span>)
+printer.connect</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="connect&#40;&amp;block&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>connect</strong>(&block)
+
+        <a class="method-permalink" href="#connect%28%26block%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Establishes a connection to the printer, and yields the printer instance
+to the block. The connection will be closed automatically when the block
+returns.</p>
+
+<pre><code>printer <span class="o">=</span> <span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;1.2.3.4&quot;</span>)
+printer.connect <span class="k">do</span> <span class="o">|</span>p<span class="o">|</span>
+  ...
+<span class="k">end</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disconnect-instance-method">
+      <div class="signature">
+        
+        def <strong>disconnect</strong>
+
+        <a class="method-permalink" href="#disconnect-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Closes an established connection to a printer.</p>
+
+<pre><code>printer <span class="o">=</span> <span class="t">Printer</span>.<span class="k">new</span>(<span class="s">&quot;1.2.3.4&quot;</span>)
+printer.connect
+...
+printer.disconnect</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="host:String-instance-method">
+      <div class="signature">
+        
+        def <strong>host</strong> : String
+
+        <a class="method-permalink" href="#host%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="host&#61;&#40;host:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>host=</strong>(host : String)
+
+        <a class="method-permalink" href="#host%3D%28host%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>port</strong> : Int32
+
+        <a class="method-permalink" href="#port%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port&#61;&#40;port:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>port=</strong>(port : Int32)
+
+        <a class="method-permalink" href="#port%3D%28port%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="socket:TCPSocket-instance-method">
+      <div class="signature">
+        
+        def <strong>socket</strong> : TCPSocket
+
+        <a class="method-permalink" href="#socket%3ATCPSocket-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="socket&#61;&#40;socket:TCPSocket&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>socket=</strong>(socket : TCPSocket)
+
+        <a class="method-permalink" href="#socket%3D%28socket%3ATCPSocket%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/printer.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

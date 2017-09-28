@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/t-richards/tsc-printer">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/doc.js"></script>
+  <title>Tsc::Codemap - github.com/t-richards/tsc-printer</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc" data-name="tsc">
+      <a href="../Tsc.html">Tsc</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/t-richards/tsc-printer/Tsc/Codemap" data-name="tsc::codemap">
+      <a href="../Tsc/Codemap.html">Codemap</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/t-richards/tsc-printer/Tsc/Command" data-name="tsc::command">
+      <a href="../Tsc/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Label" data-name="tsc::command::label">
+      <a href="../Tsc/Command/Label.html">Label</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Setup" data-name="tsc::command::setup">
+      <a href="../Tsc/Command/Setup.html">Setup</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Status" data-name="tsc::command::status">
+      <a href="../Tsc/Command/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/ConnectionError" data-name="tsc::connectionerror">
+      <a href="../Tsc/ConnectionError.html">ConnectionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Error" data-name="tsc::error">
+      <a href="../Tsc/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Printer" data-name="tsc::printer">
+      <a href="../Tsc/Printer.html">Printer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Unit" data-name="tsc::unit">
+      <a href="../Tsc/Unit.html">Unit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Tsc::Codemap
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/codemap.cr#L2" target="_blank">tsc/codemap.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DETAILS">
+        <strong>DETAILS</strong> = <code>{<span class="n">0</span> => <span class="n">:normal</span>, <span class="n">1</span> => <span class="n">:head_opened</span>, <span class="n">2</span> => <span class="n">:paper_jam</span>, <span class="n">3</span> => <span class="n">:paper_jam_head_open</span>, <span class="n">4</span> => <span class="n">:paper_empty</span>, <span class="n">5</span> => <span class="n">:paper_empty_head_open</span>, <span class="n">8</span> => <span class="n">:ribbon_empty</span>, <span class="n">9</span> => <span class="n">:ribbon_empty_head_open</span>, <span class="n">10</span> => <span class="n">:ribbon_empty_paper_jam</span>, <span class="n">11</span> => <span class="n">:ribbon_empty_paper_jam_head_open</span>, <span class="n">12</span> => <span class="n">:ribbon_empty_paper_empty</span>, <span class="n">13</span> => <span class="n">:ribbon_empty_paper_empty_head_open</span>, <span class="n">16</span> => <span class="n">:pause</span>, <span class="n">32</span> => <span class="n">:printing</span>, <span class="n">128</span> => <span class="n">:other_error</span>}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MEDIA_ERRORS">
+        <strong>MEDIA_ERRORS</strong> = <code>{<span class="n">64</span> => <span class="n">:normal</span>, <span class="n">65</span> => <span class="n">:paper_empty</span>, <span class="n">66</span> => <span class="n">:paper_jam</span>, <span class="n">68</span> => <span class="n">:ribbon_empty</span>, <span class="n">72</span> => <span class="n">:ribbon_jam</span>, <span class="n">96</span> => <span class="n">:print_head_open</span>}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MESSAGES">
+        <strong>MESSAGES</strong> = <code>{<span class="n">64</span> => <span class="n">:normal</span>, <span class="n">96</span> => <span class="n">:pause</span>, <span class="n">66</span> => <span class="n">:backing_label</span>, <span class="n">67</span> => <span class="n">:cutting</span>, <span class="n">69</span> => <span class="n">:printer_error</span>, <span class="n">70</span> => <span class="n">:form_feed</span>, <span class="n">75</span> => <span class="n">:waiting_to_press_print_key</span>, <span class="n">76</span> => <span class="n">:waiting_to_take_label</span>, <span class="n">80</span> => <span class="n">:print_batch</span>, <span class="n">87</span> => <span class="n">:imaging</span>}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRINTER_ERRORS">
+        <strong>PRINTER_ERRORS</strong> = <code>{<span class="n">64</span> => <span class="n">:normal</span>, <span class="n">65</span> => <span class="n">:print_head_overheat</span>, <span class="n">66</span> => <span class="n">:stepping_motor_overheat</span>, <span class="n">68</span> => <span class="n">:print_head_error</span>, <span class="n">72</span> => <span class="n">:cutter_jam</span>, <span class="n">96</span> => <span class="n">:insufficient_memory</span>}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="WARNINGS">
+        <strong>WARNINGS</strong> = <code>{<span class="n">64</span> => <span class="n">:normal</span>, <span class="n">65</span> => <span class="n">:reversed</span>, <span class="n">66</span> => <span class="n">:reversed</span>, <span class="n">68</span> => <span class="n">:reversed</span>, <span class="n">72</span> => <span class="n">:receive_buffer_full</span>, <span class="n">96</span> => <span class="n">:reversed</span>}</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#convert_detailed_status_response%28slice%3ABytes%29-class-method" class="signature"><strong>.convert_detailed_status_response</strong>(slice : Bytes)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="convert_detailed_status_response&#40;slice:Bytes&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>convert_detailed_status_response</strong>(slice : Bytes)
+
+        <a class="method-permalink" href="#convert_detailed_status_response%28slice%3ABytes%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/codemap.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/t-richards/tsc-printer">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Tsc::Command::Label - github.com/t-richards/tsc-printer</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc" data-name="tsc">
+      <a href="../../Tsc.html">Tsc</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Codemap" data-name="tsc::codemap">
+      <a href="../../Tsc/Codemap.html">Codemap</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc/Command" data-name="tsc::command">
+      <a href="../../Tsc/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/t-richards/tsc-printer/Tsc/Command/Label" data-name="tsc::command::label">
+      <a href="../../Tsc/Command/Label.html">Label</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Setup" data-name="tsc::command::setup">
+      <a href="../../Tsc/Command/Setup.html">Setup</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Status" data-name="tsc::command::status">
+      <a href="../../Tsc/Command/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/ConnectionError" data-name="tsc::connectionerror">
+      <a href="../../Tsc/ConnectionError.html">ConnectionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Error" data-name="tsc::error">
+      <a href="../../Tsc/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Printer" data-name="tsc::printer">
+      <a href="../../Tsc/Printer.html">Printer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Unit" data-name="tsc::unit">
+      <a href="../../Tsc/Unit.html">Unit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Tsc::Command::Label
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Tsc/Printer.html">Tsc::Printer</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/label.cr#L3" target="_blank">tsc/command/label.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="AZTEC">
+        <strong>AZTEC</strong> = <code><span class="s">&quot;AZTEC&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BAR">
+        <strong>BAR</strong> = <code><span class="s">&quot;BAR&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BARCODE">
+        <strong>BARCODE</strong> = <code><span class="s">&quot;BARCODE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BITMAP">
+        <strong>BITMAP</strong> = <code><span class="s">&quot;BITMAP&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BLOCK">
+        <strong>BLOCK</strong> = <code><span class="s">&quot;BLOCK&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BOX">
+        <strong>BOX</strong> = <code><span class="s">&quot;BOX&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CIRCLE">
+        <strong>CIRCLE</strong> = <code><span class="s">&quot;CIRCLE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CODABLOCK">
+        <strong>CODABLOCK</strong> = <code><span class="s">&quot;CODABLOCK&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DIAGONAL">
+        <strong>DIAGONAL</strong> = <code><span class="s">&quot;DIAGONAL&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DMATRIX">
+        <strong>DMATRIX</strong> = <code><span class="s">&quot;DMATRIX&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ELLIPSE">
+        <strong>ELLIPSE</strong> = <code><span class="s">&quot;ELLIPSE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="ERASE">
+        <strong>ERASE</strong> = <code><span class="s">&quot;ERASE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MAXICODE">
+        <strong>MAXICODE</strong> = <code><span class="s">&quot;MAXICODE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MPDF417">
+        <strong>MPDF417</strong> = <code><span class="s">&quot;MPDF417&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PDF417">
+        <strong>PDF417</strong> = <code><span class="s">&quot;PDF417&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUTBMP">
+        <strong>PUTBMP</strong> = <code><span class="s">&quot;PUTBMP&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PUTPCX">
+        <strong>PUTPCX</strong> = <code><span class="s">&quot;PUTPCX&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="QRCODE">
+        <strong>QRCODE</strong> = <code><span class="s">&quot;QRCODE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="REVERSE">
+        <strong>REVERSE</strong> = <code><span class="s">&quot;REVERSE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="RSS">
+        <strong>RSS</strong> = <code><span class="s">&quot;RSS&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TEXT">
+        <strong>TEXT</strong> = <code><span class="s">&quot;TEXT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="TLC39">
+        <strong>TLC39</strong> = <code><span class="s">&quot;TLC39&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#barcode%28x%3AInt32%2Cy%3AInt32%2Ccode_type%3AString%2Cheight%3AInt32%2Chuman_readable%3AInt32%2Crotation%3AInt32%2Cnarrow%3AInt32%2Cwide%3AInt32%2Calignment%3AInt32%2Ccontent%3AString%29-instance-method" class="signature"><strong>#barcode</strong>(x : Int32, y : Int32, code_type : String, height : Int32, human_readable : Int32, rotation : Int32, narrow : Int32, wide : Int32, alignment : Int32, content : String)</a>
+        
+          <div class="summary"><p>This command prints 1D barcodes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box%28x%3AInt32%2Cy%3AInt32%2Cx_end%3AInt32%2Cy_end%3AInt32%2Cthickness%3AInt32%2Cradius%3AInt32%3D0%29-instance-method" class="signature"><strong>#box</strong>(x : Int32, y : Int32, x_end : Int32, y_end : Int32, thickness : Int32, radius : Int32 = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>This command draws rectangles on the label.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text%28x%3AInt32%2Cy%3AInt32%2Cfont%3AString%2Crotation%3AInt32%2Cx_multiplication%3AInt32%2Cy_multiplication%3AInt32%2Calignment%3AInt32%2Ccontent%3AString%29-instance-method" class="signature"><strong>#text</strong>(x : Int32, y : Int32, font : String, rotation : Int32, x_multiplication : Int32, y_multiplication : Int32, alignment : Int32, content : String)</a>
+        
+          <div class="summary"><p>This command prints text on the label.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="barcode&#40;x:Int32,y:Int32,code_type:String,height:Int32,human_readable:Int32,rotation:Int32,narrow:Int32,wide:Int32,alignment:Int32,content:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>barcode</strong>(x : Int32, y : Int32, code_type : String, height : Int32, human_readable : Int32, rotation : Int32, narrow : Int32, wide : Int32, alignment : Int32, content : String)
+
+        <a class="method-permalink" href="#barcode%28x%3AInt32%2Cy%3AInt32%2Ccode_type%3AString%2Cheight%3AInt32%2Chuman_readable%3AInt32%2Crotation%3AInt32%2Cnarrow%3AInt32%2Cwide%3AInt32%2Calignment%3AInt32%2Ccontent%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>This command prints 1D barcodes.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/label.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box&#40;x:Int32,y:Int32,x_end:Int32,y_end:Int32,thickness:Int32,radius:Int32&#61;0&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>box</strong>(x : Int32, y : Int32, x_end : Int32, y_end : Int32, thickness : Int32, radius : Int32 = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#box%28x%3AInt32%2Cy%3AInt32%2Cx_end%3AInt32%2Cy_end%3AInt32%2Cthickness%3AInt32%2Cradius%3AInt32%3D0%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>This command draws rectangles on the label.</p>
+
+<p><strong>Note</strong>:</p>
+
+<ul><li>Recommended max thickness of box is 12 mm at 4" width. Thickness of box
+larger than 12 mm may damage the power supply and affect the print
+quality. Max. print ratio is different for each printer model. Desktop
+and industrial printer print ratio is limited to 20% and 30%
+respectively.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/label.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text&#40;x:Int32,y:Int32,font:String,rotation:Int32,x_multiplication:Int32,y_multiplication:Int32,alignment:Int32,content:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>text</strong>(x : Int32, y : Int32, font : String, rotation : Int32, x_multiplication : Int32, y_multiplication : Int32, alignment : Int32, content : String)
+
+        <a class="method-permalink" href="#text%28x%3AInt32%2Cy%3AInt32%2Cfont%3AString%2Crotation%3AInt32%2Cx_multiplication%3AInt32%2Cy_multiplication%3AInt32%2Calignment%3AInt32%2Ccontent%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>This command prints text on the label.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/label.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

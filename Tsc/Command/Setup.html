@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/t-richards/tsc-printer">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Tsc::Command::Setup - github.com/t-richards/tsc-printer</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc" data-name="tsc">
+      <a href="../../Tsc.html">Tsc</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Codemap" data-name="tsc::codemap">
+      <a href="../../Tsc/Codemap.html">Codemap</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/t-richards/tsc-printer/Tsc/Command" data-name="tsc::command">
+      <a href="../../Tsc/Command.html">Command</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Label" data-name="tsc::command::label">
+      <a href="../../Tsc/Command/Label.html">Label</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/t-richards/tsc-printer/Tsc/Command/Setup" data-name="tsc::command::setup">
+      <a href="../../Tsc/Command/Setup.html">Setup</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Command/Status" data-name="tsc::command::status">
+      <a href="../../Tsc/Command/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/ConnectionError" data-name="tsc::connectionerror">
+      <a href="../../Tsc/ConnectionError.html">ConnectionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Error" data-name="tsc::error">
+      <a href="../../Tsc/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Printer" data-name="tsc::printer">
+      <a href="../../Tsc/Printer.html">Printer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/t-richards/tsc-printer/Tsc/Unit" data-name="tsc::unit">
+      <a href="../../Tsc/Unit.html">Unit</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Tsc::Command::Setup
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>This module implements <strong>Setup and System Commands</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Tsc/Printer.html">Tsc::Printer</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/setup.cr#L4" target="_blank">tsc/command/setup.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="AUTODETECT">
+        <strong>AUTODETECT</strong> = <code><span class="s">&quot;AUTODETECT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BACKFEED">
+        <strong>BACKFEED</strong> = <code><span class="s">&quot;BACKFEED&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BACKUP">
+        <strong>BACKUP</strong> = <code><span class="s">&quot;BACKUP&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BLINE">
+        <strong>BLINE</strong> = <code><span class="s">&quot;BLINE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="BLINEDETECT">
+        <strong>BLINEDETECT</strong> = <code><span class="s">&quot;BLINEDETECT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CLS">
+        <strong>CLS</strong> = <code><span class="s">&quot;CLS&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CODEPAGE">
+        <strong>CODEPAGE</strong> = <code><span class="s">&quot;CODEPAGE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="COUNTRY">
+        <strong>COUNTRY</strong> = <code><span class="s">&quot;COUNTRY&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="CUT">
+        <strong>CUT</strong> = <code><span class="s">&quot;CUT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DELAY">
+        <strong>DELAY</strong> = <code><span class="s">&quot;DELAY&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DENSITY">
+        <strong>DENSITY</strong> = <code><span class="s">&quot;DENSITY&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DIRECTION">
+        <strong>DIRECTION</strong> = <code><span class="s">&quot;DIRECTION&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="DISPLAY">
+        <strong>DISPLAY</strong> = <code><span class="s">&quot;DISPLAY&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="EOJ">
+        <strong>EOJ</strong> = <code><span class="s">&quot;EOJ&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FEED">
+        <strong>FEED</strong> = <code><span class="s">&quot;FEED&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="FORMFEED">
+        <strong>FORMFEED</strong> = <code><span class="s">&quot;FORMFEED&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GAP">
+        <strong>GAP</strong> = <code><span class="s">&quot;GAP&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="GAPDETECT">
+        <strong>GAPDETECT</strong> = <code><span class="s">&quot;GAPDETECT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="HOME">
+        <strong>HOME</strong> = <code><span class="s">&quot;HOME&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="INITIALPRINTER">
+        <strong>INITIALPRINTER</strong> = <code><span class="s">&quot;INITIALPRINTER&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="LIMITFEED">
+        <strong>LIMITFEED</strong> = <code><span class="s">&quot;LIMITFEED&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="MENU">
+        <strong>MENU</strong> = <code><span class="s">&quot;MENU&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="OFFSET">
+        <strong>OFFSET</strong> = <code><span class="s">&quot;OFFSET&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="PRINT">
+        <strong>PRINT</strong> = <code><span class="s">&quot;PRINT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="REFERENCE">
+        <strong>REFERENCE</strong> = <code><span class="s">&quot;REFERENCE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SELFTEST">
+        <strong>SELFTEST</strong> = <code><span class="s">&quot;SELFTEST&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SHIFT">
+        <strong>SHIFT</strong> = <code><span class="s">&quot;SHIFT&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SIZE">
+        <strong>SIZE</strong> = <code><span class="s">&quot;SIZE&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SOUND">
+        <strong>SOUND</strong> = <code><span class="s">&quot;SOUND&quot;</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SPEED">
+        <strong>SPEED</strong> = <code><span class="s">&quot;SPEED&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cls-instance-method" class="signature"><strong>#cls</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#direction%28n%3AInt32%2Cm%3AInt32%29-instance-method" class="signature"><strong>#direction</strong>(n : Int32, m : Int32)</a>
+        
+          <div class="summary"><p>Defines the printout direction and mirror image.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print%28sets%3AInt32%2Ccopies%3AInt32%3D0%29-instance-method" class="signature"><strong>#print</strong>(sets : Int32, copies : Int32 = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Prints the label format currently stored in the image buffer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size%28width%3ANumber%2Clength%3ANumber%2Cunit%3ATsc%3A%3AUnit%3DTsc%3A%3AUnit%3A%3AInch%29-instance-method" class="signature"><strong>#size</strong>(width : Number, length : Number, unit : Tsc::Unit = <span class="t">Tsc</span><span class="t">::</span><span class="t">Unit</span><span class="t">::</span><span class="t">Inch</span>)</a>
+        
+          <div class="summary"><p>Defines the label width and length.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="cls-instance-method">
+      <div class="signature">
+        
+        def <strong>cls</strong>
+
+        <a class="method-permalink" href="#cls-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/setup.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="direction&#40;n:Int32,m:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>direction</strong>(n : Int32, m : Int32)
+
+        <a class="method-permalink" href="#direction%28n%3AInt32%2Cm%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Defines the printout direction and mirror image. This will be stored in
+the printer memory.</p>
+
+<p>Acceptable values for <em>n</em> and <em>m</em> are 0 or 1. Please refer to the following diagram:
+<img src="/tsc-printer/images/setup/direction.png" alt="Direction diagram"/></p>
+
+<pre><code>printer.direction(<span class="n">0</span>, <span class="n">0</span>) <span class="c"># Top-first, no mirroring</span>
+printer.direction(<span class="n">1</span>, <span class="n">0</span>) <span class="c"># Bottom-first, no mirroring</span>
+printer.direction(<span class="n">0</span>, <span class="n">1</span>) <span class="c"># Top-first with mirroring</span>
+printer.direction(<span class="n">1</span>, <span class="n">1</span>) <span class="c"># Bottom-first with mirroring</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/setup.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print&#40;sets:Int32,copies:Int32&#61;0&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(sets : Int32, copies : Int32 = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#print%28sets%3AInt32%2Ccopies%3AInt32%3D0%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Prints the label format currently stored in the image buffer.</p>
+
+<pre><code><span class="c"># Three sets of two labels, grand total of six labels</span>
+printer.print(<span class="n">3</span>, <span class="n">2</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/setup.cr#L63" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size&#40;width:Number,length:Number,unit:Tsc::Unit&#61;Tsc::Unit::Inch&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong>(width : Number, length : Number, unit : <a href="../../Tsc/Unit.html">Tsc::Unit</a> = <span class="t">Tsc</span><span class="t">::</span><span class="t">Unit</span><span class="t">::</span><span class="t">Inch</span>)
+
+        <a class="method-permalink" href="#size%28width%3ANumber%2Clength%3ANumber%2Cunit%3ATsc%3A%3AUnit%3DTsc%3A%3AUnit%3A%3AInch%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Defines the label width and length.</p>
+
+<p><strong>Since:</strong></p>
+
+<ul><li>Dot units of measurement for this command has been supported since V6.27 EZ and later firmware.</li></ul>
+
+<pre><code><span class="c"># 3.5in x 3.0in label</span>
+printer.size(<span class="n">3.5</span>, <span class="n">3.0</span>)
+
+<span class="c"># 100mm x 100mm label</span>
+printer.size(<span class="n">100</span>, <span class="n">100</span>, <span class="t">Tsc</span><span class="t">::</span><span class="t">Unit</span><span class="t">::</span><span class="t">Mm</span>)
+
+<span class="c"># 120dot x 120dot label</span>
+printer.size(<span class="n">120</span>, <span class="n">120</span>, <span class="t">Tsc</span><span class="t">::</span><span class="t">Unit</span><span class="t">::</span><span class="t">Inch</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/t-richards/tsc-printer/blob/5aa72fe3c888eb41aa2159cff06c66063c32def6/src/tsc/command/setup.cr#L84" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
